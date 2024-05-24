@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>설문 조사 링크 분배기</title>
+</head>
+<body>
+    <button onclick="getNextSurveyLink()">설문 시작하기</button>
+    <script>
+        var links = [
+            'https://forms.gle/AiPo3dhAyZ5mtPzW6',
+            'https://forms.gle/dZ7XPu1YWVnSrvhy5',
+            'https://forms.gle/3RNMgYxyizZp5CYJ6',
+            'https://forms.gle/LQdV7y7Y2vgjCtwG8'
+        ];
+        var currentLinkIndex = 0;
+
+        function getNextSurveyLink() {
+            // 링크를 순환하며 사용자에게 제공
+            window.open(links[currentLinkIndex], '_blank');
+            
+            // 다음 링크로 넘어가기
+            currentLinkIndex = (currentLinkIndex + 1) % links.length;
+        }
+    </script>
+</body>
+</html>
